@@ -90,7 +90,7 @@ void run(void* rgba, uint32_t width, uint32_t height, uint32_t index, std::mutex
 
         // Decode
         timer.reset();
-        uint64_t r = NvPipe_Decode(decoder, compressed.data(), size, decompressedDevice, width, height);
+        uint64_t r = NvPipe_Decode(decoder, compressed.data(), size, decompressedDevice, width, height, NVPIPE_RGBA32);
         decodeMs += timer.getElapsedMilliseconds();
 
         if (0 == r)

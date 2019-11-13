@@ -99,7 +99,7 @@ int main(int argc, char* argv[])
 
             // Decode
             timer.reset();
-            uint64_t r = NvPipe_Decode(decoder, compressed.data(), size, decompressed.data(), width, height);
+            uint64_t r = NvPipe_Decode(decoder, compressed.data(), size, decompressed.data(), width, height, NVPIPE_RGBA32);
             double decodeMs = timer.getElapsedMilliseconds();
 
             if (0 == r)
@@ -152,7 +152,7 @@ int main(int argc, char* argv[])
 
             // Decode
             timer.reset();
-            uint64_t r = NvPipe_Decode(decoder, compressed.data(), size, decompressedDevice, width, height);
+            uint64_t r = NvPipe_Decode(decoder, compressed.data(), size, decompressedDevice, width, height, NVPIPE_RGBA32);
             double decodeMs = timer.getElapsedMilliseconds();
 
             if (0 == r)
